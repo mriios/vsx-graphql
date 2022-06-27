@@ -1,6 +1,34 @@
-# Getting Started with Create React App
+# Data visualization with Visx and GraphQL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Goal
+
+Communicate blog post analytics data in a visual manner to non-tech users
+
+## Process
+
+Step 1 was to play around with the GraphQL/Apollo server. This with the intention to find out what kind of data we had and what could we do with it.
+
+Wrote down on paper plans to create charts. What data would we use and how would it be manipulated to get the results we needed. Some charts were chosen based on the data we had.
+
+Started simple boilerplate code for the project. Created queries and hooks for later use.
+
+For each chart, data was first manipulated to get the structure and results we needed. Then, the data was transformed into a chart.
+
+## Choices
+
+Folder structure is easy to understand, everything has it's own folder and file. Every function/parent folder was left at the same level for easy reach and readability, when developers start working on the project.
+
+## Challenges
+
+A big challenge was the whole Visx library. It seemed scary at first, creating graphs with relational data. After reading through the docs and seeing how everything was implemented, it was easier to understand what package did what and how to apply it. Docs were helpful for understanding the library.
+
+Manipulating the data was also a challenge. I had to figure out how to get the data into the right format for the chart, based on mock data the examples were using in the docs.
+
+## Final thoughts
+
+Project took around 6hrs to complete. These 6 hours weren't continuous. I think the API could have a filter param for users. Also, type User could have the option to get posts by that specific user.
+
+This was a fun project and a lot was learned from it. Visx is a great library for data visualization and I hope to use it more in the future.
 
 ## Available Scripts
 
@@ -10,37 +38,3 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
