@@ -1,10 +1,11 @@
-import { curveLinear } from "@visx/curve";
+import { Grid } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LinePath } from "@visx/shape";
-import { scaleLinear, scaleOrdinal } from "@visx/scale";
+import { curveLinear } from "@visx/curve";
 import { MarkerCircle } from "@visx/marker";
 import { LinearGradient } from "@visx/gradient";
 import { AxisLeft, AxisBottom } from "@visx/axis";
+import { scaleLinear, scaleOrdinal } from "@visx/scale";
 import { LegendOrdinal, LegendItem, LegendLabel } from "@visx/legend";
 
 import monthNumberToNameShort from "../../utils/monthNumberToName";
@@ -132,8 +133,19 @@ const Linear = ({
             </Group>
           );
         })}
+        {/* still need to get this to align correctly */}
+        <Grid
+          xScale={xScale}
+          yScale={yScale}
+          width={innerWidth}
+          height={innerHeight + padding}
+          numTicksRows={5}
+          numTicksColumns={topicsData[0]?.length}
+          left={padding}
+          top={height - innerHeight}
+          stroke="#eaf0f64d"
+        />
         <AxisLeft
-          hideAxisLine
           scale={yScale}
           label="Amount"
           numTicks={5}
@@ -144,7 +156,6 @@ const Linear = ({
           axisClassName="Linear__Axis"
         />
         <AxisBottom
-          hideAxisLine
           scale={xScale}
           label="Month"
           tickFormat={(v: any) => {
