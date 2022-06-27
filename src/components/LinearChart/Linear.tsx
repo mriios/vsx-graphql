@@ -1,10 +1,11 @@
 import { curveLinear } from "@visx/curve";
 import { Group } from "@visx/group";
 import { LinePath } from "@visx/shape";
-import { scaleLinear } from "@visx/scale";
+import { scaleLinear, scaleOrdinal } from "@visx/scale";
 import { MarkerCircle } from "@visx/marker";
 import { LinearGradient } from "@visx/gradient";
 import { AxisLeft, AxisBottom } from "@visx/axis";
+import { LegendOrdinal, LegendItem, LegendLabel } from "@visx/legend";
 
 import monthNumberToNameShort from "../../utils/monthNumberToName";
 import { MonthCount, MonthData } from "../../types/global";
@@ -31,7 +32,12 @@ const topics = [
   ],
   lineColors = ["#000000", "#ff6767"],
   padding = 30,
-  white = "#ffffff";
+  white = "#ffffff",
+  legendData = scaleOrdinal({
+    domain: ["Your Posts", "Total Posts"],
+    range: lineColors
+  }),
+  legendIconSize = 15;
 
 const Linear = ({
   width,
@@ -70,6 +76,30 @@ const Linear = ({
           ))}
         </select>
       </label>
+      <LegendOrdinal scale={legendData} labelFormat={(label) => label}>
+        {(labels) => (
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            {labels.map((label) => (
+              <LegendItem key={label.value} margin="0 0 10px 5px">
+                <svg width={legendIconSize} height={legendIconSize}>
+                  <g stroke={label.value}>
+                    <line
+                      x1="1"
+                      y1="12"
+                      x2={legendIconSize - 2}
+                      y2="2"
+                      strokeWidth="3"
+                    />
+                  </g>
+                </svg>
+                <LegendLabel align="right" margin="0 15px 0 5px">
+                  {label.text}
+                </LegendLabel>
+              </LegendItem>
+            ))}
+          </div>
+        )}
+      </LegendOrdinal>
       <svg
         className="Linear__Chart"
         width={width}

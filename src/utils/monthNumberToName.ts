@@ -1,4 +1,4 @@
-const monthNumberToNameShort = (monthNumber: number) => {
+const monthNumberToNameShort = (monthNumber: number): string => {
   const date = new Date();
   date.setMonth(monthNumber);
 
