@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 import useUser from "./hooks/users/useUser";
 import HomePage from "./pages/Home/HomePage";
 import NavBar from "./components/NavBar/NavBar";
+import LinearChartPage from "./pages/Linear/LinearChartPage";
 import "./App.css";
 
 const commonRouteProps = {
@@ -34,6 +35,11 @@ const App = () => {
         <h2>{greetingText}</h2>
         <Routes>
           <Route {...commonRouteProps} path="/" element={<HomePage />} />
+          <Route
+            {...commonRouteProps}
+            path="/LinearChart"
+            element={<LinearChartPage />}
+          />
         </Routes>
       </div>
     </div>

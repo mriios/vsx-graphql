@@ -1,0 +1,17 @@
+.Linear svg.Linear__Chart {
+  margin-bottom: 20vh;
+}
+.Linear__Select {
+  text-transform: capitalize;
+  margin-bottom: 1.5rem;
+  margin-left: .5rem;
+}
+.Linear__Select {
+  margin-top: 4rem;
+}
+.Linear__Axis tspan {
+  fill: #fff;
+}
+.Linear__Axis text {
+  font-size: 13px;
+}
