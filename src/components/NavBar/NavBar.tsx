@@ -10,6 +10,9 @@ const NavBar = () => {
         <li>
           <Link to="/">Home Page</Link>
         </li>
+        <li>
+          <Link to="/LinearChart">Linear Chart</Link>
+        </li>
       </ul>
     </div>
   );
