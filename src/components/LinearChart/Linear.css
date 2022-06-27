@@ -9,3 +9,9 @@
 .Linear__Select {
   margin-top: 4rem;
 }
+.Linear__Axis tspan {
+  fill: #fff;
+}
+.Linear__Axis text {
+  font-size: 13px;
+}

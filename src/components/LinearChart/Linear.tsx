@@ -4,7 +4,9 @@ import { LinePath } from "@visx/shape";
 import { scaleLinear } from "@visx/scale";
 import { MarkerCircle } from "@visx/marker";
 import { LinearGradient } from "@visx/gradient";
+import { AxisLeft, AxisBottom } from "@visx/axis";
 
+import monthNumberToNameShort from "../../utils/monthNumberToName";
 import { MonthCount, MonthData } from "../../types/global";
 import "./Linear.css";
 
@@ -83,7 +85,6 @@ const Linear = ({
           ry={15}
         />
         {topicsData.map((lineData, i) => {
-          console.log(lineData);
           return (
             <Group key={lineData[i]?.count} top={padding} left={padding}>
               <LinePath
@@ -101,6 +102,34 @@ const Linear = ({
             </Group>
           );
         })}
+        <AxisLeft
+          hideAxisLine
+          scale={yScale}
+          label="Amount"
+          numTicks={5}
+          left={padding * 2}
+          top={height - innerHeight}
+          stroke={white}
+          tickStroke={white}
+          axisClassName="Linear__Axis"
+        />
+        <AxisBottom
+          hideAxisLine
+          scale={xScale}
+          label="Month"
+          tickFormat={(v: any) => {
+            if (width < 768) {
+              return v;
+            }
+            return monthNumberToNameShort(v - 1);
+          }}
+          numTicks={topicsData[0]?.length}
+          left={padding}
+          top={height}
+          stroke={white}
+          tickStroke={white}
+          axisClassName="Linear__Axis"
+        />
       </svg>
     </div>
   );
