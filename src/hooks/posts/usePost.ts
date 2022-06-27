@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { GET_POST } from "../../apollo/queries/posts";
 
-export const usePost = (id: string) => {
+const usePost = (id: string) => {
   const { loading, error, data } = useQuery(GET_POST, {
     variables: { id }
   });
@@ -12,3 +12,5 @@ export const usePost = (id: string) => {
     data
   };
 };
+
+export default usePost;

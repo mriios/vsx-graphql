@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { GET_USERS } from "../../apollo/queries/users";
 
-export const useUsers = (count: number) => {
+const useUsers = (count: number) => {
   const { loading, error, data } = useQuery(GET_USERS, {
     variables: { count }
   });
@@ -12,3 +12,5 @@ export const useUsers = (count: number) => {
     data
   };
 };
+
+export default useUsers;
