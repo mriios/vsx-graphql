@@ -5,11 +5,21 @@ export type MonthCount = {
   count: number;
 }
 
+export type LikelyTopics = {
+  label: string;
+  likelihood: number;
+  color?: string;
+}
+
 export type Post = {
   createdAt: string;
   id: string;
   likelyTopics: LikelyTopics[];
   published: boolean;
+}
+
+export type PostData = {
+  allPosts: Post[];
 }
 
 export type Author = {

@@ -13,6 +13,9 @@ const NavBar = () => {
         <li>
           <Link to="/LinearChart">Linear Chart</Link>
         </li>
+        <li>
+          <Link to="/PieChart">Pie Chart</Link>
+        </li>
       </ul>
     </div>
   );

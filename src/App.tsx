@@ -4,6 +4,7 @@ import useUser from "./hooks/users/useUser";
 import HomePage from "./pages/Home/HomePage";
 import NavBar from "./components/NavBar/NavBar";
 import LinearChartPage from "./pages/Linear/LinearChartPage";
+import PieChartPage from "./pages/Pie/PieChartPage";
 import "./App.css";
 
 const commonRouteProps = {
@@ -39,6 +40,11 @@ const App = () => {
             {...commonRouteProps}
             path="/LinearChart"
             element={<LinearChartPage />}
+          />
+          <Route
+            {...commonRouteProps}
+            path="/PieChart"
+            element={<PieChartPage />}
           />
         </Routes>
       </div>
