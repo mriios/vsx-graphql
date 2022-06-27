@@ -118,7 +118,7 @@ const Linear = ({
         {topicsData.map((lineData, i) => {
           return (
             <Group key={lineData[i]?.count} top={padding} left={padding}>
-              <LinePath
+              <LinePath<MonthCount>
                 curve={curveLinear}
                 data={lineData}
                 x={(d) => xScale(getX(d)) ?? 0}
