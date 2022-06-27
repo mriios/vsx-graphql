@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 
-import { useUser } from "./hooks/users/useUser";
+import useUser from "./hooks/users/useUser";
 import HomePage from "./pages/Home/HomePage";
 import NavBar from "./components/NavBar/NavBar";
 import "./App.css";
